@@ -22,6 +22,7 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var places;
+var img = 'flag.png';
 
 function init()
 {
@@ -91,6 +92,7 @@ var placeLoc = place.geometry.location;
 var marker = new google.maps.Marker({
 map: map,
 position: place.geometry.location
+icon: img
 });
 
 google.maps.event.addListener(marker, 'click', function() {
