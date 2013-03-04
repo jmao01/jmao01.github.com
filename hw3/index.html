@@ -53,7 +53,7 @@
 
 		marker = new google.maps.Marker({
 			position: me,
-			title: "I am here at" + myLat "," + myLng;
+			title: "I am here at" + myLat "," + myLng
 		});
 	
 		marker.setMap(map);
@@ -90,6 +90,7 @@
 		var marker = new google.maps.Marker({
 		map: map,
 		position: place.geometry.location
+		icon: image;
 	});
 
 	google.maps.event.addListener(marker, 'click', function() {
