@@ -23,7 +23,7 @@
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var nearestStop;
-	var numberOfStops = 21;
+	numberOfStops = 21;
 
 	function init()
 	{
@@ -79,6 +79,7 @@
 			distance = calculateDistance(location[i].lat, location[i].lon, myLat, myLng);
 			if (distance < minDistance){
 				nearestStop = location[i];
+				minDistance = distance;
 			}
 		}
 	}
