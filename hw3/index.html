@@ -23,6 +23,7 @@
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var nearestStop;
+	var numStops = 21;
 	var station = new Object();
 
 	function init()
@@ -74,7 +75,7 @@
 	function nearestStop(){
 		nearestStop = station[0].name;
 		minDistance = calculateDistance(station[0].lat, myLat, station[0].lon, myLng);
-		for(var i = 1; i < station.length; i++){
+		for(var i = 1; i < numStops; i++){
 			distance = calculateDistance(station[i].lat, myLat, station[i].lon, myLng);
 			console.log(distance);
 			if (distance < minDistance){
@@ -118,7 +119,7 @@
 
 	function renderMap()
 	{
-		me = new google.maps.LatLng(myLat, myLng);
+		var me = new google.maps.LatLng(myLat, myLng);
 		map.panTo(me);
 		var marker = new google.maps.Marker({
 			position: me,
@@ -131,7 +132,7 @@
 			infowindow.open(map, marker);
 		});
 		
-		for (var i = 0; i < station.length; i++){
+		for (var i = 0; i < numStops; i++){
 			createMarker(station[0]);
 		}
 
@@ -143,7 +144,7 @@
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
-			title: place.name
+			title: place.name	
 		});
 		marker.setMap(map);
 
