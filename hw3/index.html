@@ -140,11 +140,12 @@
 
 	function createMarker(place)
 	{
+		var pic = 'flag.png';
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name
-			icon: 'flag.png'
+			icon: pic
 		});
 		marker.setMap(map);
 
