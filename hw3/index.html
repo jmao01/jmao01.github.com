@@ -133,6 +133,11 @@
 			title: station[0].name
 		});
 		tester.setMap(map);
+
+		google.maps.event.addListener(tester, 'click', function() {
+			infowindow.setContent(marker.title);
+			infowindow.open(map, marker);
+		});
 		
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.setContent(marker.title);
