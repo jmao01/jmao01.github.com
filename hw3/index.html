@@ -77,6 +77,7 @@
 		minDistance = calculateDistance(station[0]['lat'], station[0]['lon'], myLat, myLng);
 		for(i = 1; i < numberOfStops; i++){
 			distance = calculateDistance(station[i]['lat'], station[i]['lon'], myLat, myLng);
+			console.log(distance);
 			if (distance < minDistance){
 				nearestStop = station[i]['name'];
 				minDistance = distance;
