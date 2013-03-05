@@ -31,7 +31,6 @@
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		getMyLocation();
-		console.log(myLat);
 	}
 
 	function initStations(){
@@ -74,7 +73,7 @@
 	}
 
 	function nearestStop(){
-		nearestStop = location[0];
+		nearestStop = station[0];
 		minDistance = calculateDistance(station[0]['lat'], myLat, station[0]['lon'], myLng);
 		for(i = 1; i < numberOfStops; i++){
 			distance = calculateDistance(station[i]['lat'], myLat, station[i]['lon'], myLng);
