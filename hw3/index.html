@@ -77,7 +77,6 @@
 		minDistance = calculateDistance(station[0].lat, myLat, station[0].lon, myLng);
 		for(var i = 1; i < numStops; i++){
 			distance = calculateDistance(station[i].lat, myLat, station[i].lon, myLng);
-			console.log(distance);
 			if (distance < minDistance){
 				nearestStop = station[i].name;
 				minDistance = distance;
@@ -134,7 +133,6 @@
 		
 		for (var i = 0; i < numStops; i++){
 			createMarker(station[i]);
-			console.log(station[i].name);
 		}
 
 	}
