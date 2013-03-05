@@ -9,25 +9,29 @@
 <link rel="stylesheet" href="geolocation_map_style.css" />
 
 <script>
-	var myLat = 0;
-	var myLng = 0;
-	var request = new XMLHttpRequest();
-	var me = new google.maps.LatLng(myLat, myLng);
-	var myOptions = {
-		zoom: 13, 
-		center: me,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map;
-	var marker;
-	var infowindow = new google.maps.InfoWindow();
-	var places;
-	var nearestStop;
-	var numStops = 21;
-	var station = new Object();
+	function initialize_variables()
+	{
+		myLat = 0;
+		myLng = 0;
+		request = new XMLHttpRequest();
+		me = new google.maps.LatLng(myLat, myLng);
+		myOptions = {
+			zoom: 13, 
+			center: me,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map;
+		marker;
+		infowindow = new google.maps.InfoWindow();
+		places;
+		nearestStop;
+		numStops = 21;
+		station = new Object();
+	}
 
 	function init()
 	{
+		initialize_variables();
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		getMyLocation();
