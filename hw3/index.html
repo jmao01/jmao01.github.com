@@ -73,13 +73,13 @@
 	}
 
 	function nearestStop(){
-		nearestStop = station[0];
-		minDistance = calculateDistance(station[0]['lat'], myLat, station[0]['lon'], myLng);
+		nearestStop = station[0].name;
+		minDistance = calculateDistance(station[0].lat, myLat, station[0].lon, myLng);
 		for(i = 1; i < numberOfStops; i++){
-			distance = calculateDistance(station[i]['lat'], myLat, station[i]['lon'], myLng);
+			distance = calculateDistance(station[i].lat, myLat, station[i].lon, myLng);
 			console.log(distance);
 			if (distance < minDistance){
-				nearestStop = station[i]['name'];
+				nearestStop = station[i].name;
 				minDistance = distance;
 			}
 		}
@@ -126,6 +126,8 @@
 			title: "Here I Am!"
 		});
 		marker.setMap(map);
+
+		
 
 
 		google.maps.event.addListener(marker, 'click', function() {
