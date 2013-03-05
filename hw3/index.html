@@ -31,6 +31,7 @@
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		getMyLocation();
+		drawPolyline();
 	}
 
 	function initStations(){
@@ -163,6 +164,8 @@
 		subwayPath = new google.maps.Polyline({
 			path: stationCoords,
 			strokeColor: '#FF0000',
+			strokeOpacity: 1.0,
+			strokeWeight: 2
 		});
 		subwayPath.setMap(map);
 	}	
