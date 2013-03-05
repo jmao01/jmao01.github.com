@@ -161,7 +161,7 @@
 stationCoords[0] = new google.maps.LatLng(station[0].lat, station[0].lon);
 		for (var i = 0; i < numStops; i++){
 			stationCoords[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
-			console.log(stationCoords[i]);
+			console.log(stationCoords[i].lat);
 		}
 		subwayPath = new google.maps.Polyline({
 			path: stationCoords,
