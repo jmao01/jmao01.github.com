@@ -29,6 +29,7 @@
 	{
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		console.log(location[0]['name']);
 		getMyLocation();
 		nearestStop();
 	}
