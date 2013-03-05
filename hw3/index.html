@@ -78,7 +78,7 @@
 		for(i = 1; i < numberOfStops; i++){
 			distance = calculateDistance(location[i]['lat'], location[i]['lon'], myLat, myLng);
 			if (distance < minDistance){
-				nearestStop = location[i];
+				nearestStop = location[i]['name'];
 				minDistance = distance;
 			}
 		}
