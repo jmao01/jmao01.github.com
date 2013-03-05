@@ -95,8 +95,8 @@
 		var R = 6371; 
 		dlon = lon2 - lon1
 		dlat = lat2 - lat1
-		a = (sin(dlat/2))^2 + cos(lat1) * cos(lat2) * (sin(dlon/2))^2
-		c = 2 * atan2( sqrt(a), sqrt(1-a) )
+		a = (Math.sin(dlat/2))^2 + Math.cos(lat1) * Math.cos(lat2) * (Math.sin(dlon/2))^2
+		c = 2 * Math.atan2( sqrt(a), sqrt(1-a) )
 		d = R * c 
 	}
 
