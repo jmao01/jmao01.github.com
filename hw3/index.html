@@ -23,7 +23,6 @@
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var nearestStop;
-	var numberOfStops = 21;
 	var station = new Object();
 
 	function init()
@@ -75,7 +74,7 @@
 	function nearestStop(){
 		nearestStop = station[0].name;
 		minDistance = calculateDistance(station[0].lat, myLat, station[0].lon, myLng);
-		for(i = 1; i < numberOfStops; i++){
+		for(var i = 1; i < station.length; i++){
 			distance = calculateDistance(station[i].lat, myLat, station[i].lon, myLng);
 			console.log(distance);
 			if (distance < minDistance){
@@ -121,57 +120,32 @@
 	{
 		me = new google.maps.LatLng(myLat, myLng);
 		map.panTo(me);
-		marker = new google.maps.Marker({
+		var marker = new google.maps.Marker({
 			position: me,
 			title: "Here I Am!"
 		});
 		marker.setMap(map);
-		
-		test = new google.maps.LatLng(station[0].lat, station[0].lon);
-		tester = new google.maps.Marker({
-			position: test,
-			title: station[0].name
-		});
-		tester.setMap(map);
 
-		google.maps.event.addListener(tester, 'click', function() {
-			infowindow.setContent(tester.title);
-			infowindow.open(map, tester);
-		});
-		
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.setContent(marker.title);
 			infowindow.open(map, marker);
 		});
-
-		var request = {
-			location: me,
-			radius: '500',
-			types: ['food']
-		};
-		service = new google.maps.places.PlacesService(map);
-		service.search(request, callback);
-	}
-
-
-	function callback(results, status)
-	{
-		if (status == google.maps.places.PlacesServiceStatus.OK) {
-			alert("Got places back!");
-			places = results;
-			for (var i = 0; i < results.length; i++) {
-				createMarker(results[i]);
-			}
+		
+		for (var i = 0; i < station.length; i++){
+			createMarker(station[0]);
 		}
+
 	}
+
 
 	function createMarker(place)
 	{
-		var placeLoc = place.geometry.location;
+		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
-			map: map,
-			position: place.geometry.location
+			position: loc,
+			title: place.name
 		});
+		marker.setMap(map);
 
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.close();
