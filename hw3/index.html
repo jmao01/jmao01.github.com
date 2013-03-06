@@ -151,9 +151,12 @@
 	function callbackCarmenWaldo()
 	{
 		try {
+			console.log('test4');
 			if (request.readyState == 4){
+				console.log('test5');
 				waldo.exist = 'false';
 				carmen.exist = 'false';
+				console.log('test6');
 				parsed.JSON.parse(request.responseText);
 				console.log('Hi');
 				for (var i = 0; i < parsed.length; i++){
