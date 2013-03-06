@@ -269,16 +269,21 @@
 		try {
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
-				
-				list = ' ';
 
 				parsedSched = JSON.parse(requestsched.responseText);
 				
-				for (var i = 0; i < parsedSched.length; i++){
+				for (var i = 0; i < station.length; i++){
+
+					station[i]['info'] = ' ';
 				
-					if (parsedSched[i].PlatformKey == station[0].north){
-					
-						console.log(parsedSched[i].Time);
+					for (var j = 0; j < parsedSched.length; j++){
+				
+						if (parsedSched[j].PlatformKey == station[i].north){
+							station[i]['info'] +='<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
+						}
+						if (parsedSched[j].PlatformKey == station[i].south){
+							station[i]['info'] += '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
+						}
 					}
 				}
 					
