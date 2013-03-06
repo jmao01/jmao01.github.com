@@ -193,7 +193,7 @@
 
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.close();
-			infowindow.setContent(place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>');
+			infowindow.setContent(place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr></table>');
 			infowindow.open(map, this);
 		});
       	}
