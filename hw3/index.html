@@ -93,8 +93,8 @@
 			navigator.geolocation.getCurrentPosition(function(position) {
 				myLat = position.coords.latitude;
 				myLng = position.coords.longitude;
-				renderMap();
 				nearestStop();
+				renderMap();
 			});
 		}
 		else {
@@ -165,7 +165,9 @@
 		map.panTo(me);
 		var marker = new google.maps.Marker({
 			position: me,
-			title: 'You are here'
+			title: 'You are here' + '<br>' + 'Closest Station: ' 
+			      + nearestStop + '<br>' + 'Distance: ' + minDistance
+				
 		});
 		marker.setMap(map);
 
