@@ -144,7 +144,8 @@
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
-			title: place.name
+			title: place.name,
+			icon: pic
 		});
 		marker.setMap(map);
 
@@ -159,10 +160,7 @@
 	{
 		stationCoords = new Object();
 stationCoords[0] = new google.maps.LatLng(station[0].lat, station[0].lon);
-		for (var i = 0; i < numStops; i++){
-			stationCoords[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
-			console.log(stationCoords[i].lat);
-		}
+stationCoords[1] = new google.maps.LatLng(station[1].lat, station[1].lon);		
 		subwayPath = new google.maps.Polyline({
 			path: stationCoords,
 			strokeColor: '#FF0000',
