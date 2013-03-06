@@ -219,6 +219,68 @@
 	}
 	
 	
+function requestSchedule(){
+
+try {
+
+requestsched = new XMLHttpRequest();
+
+}
+
+catch (ms1) {
+try {
+requestsched = new ActiveXObject("Msxml2.XMLHTTP");
+}
+catch (ms2) {
+try {
+requestsched = new ActiveXObject("Microsoft.XMLHTTP");
+}
+catch (ex) {
+requestsched = null;
+}
+}
+}
+
+if (requestsched == null) {
+alert("Error creating request object -- Ajax not supported?");
+}
+
+try {
+
+requestsched.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+
+requestsched.send(null);
+
+requestsched.onreadystatechange = callbackSchedule;
+
+}
+
+catch (error) {
+
+alert("Whoops, exception caught!");
+
+}
+
+}
+
+function callbackSchedule(){
+
+try {
+
+if (requestsched.readyState == 4 && requestsched.status == 200) {
+
+	hi = 0;
+}
+
+}
+
+catch (error) {
+
+alert("Whoops, exception caught!");
+
+}
+
+}
 
 				
 	function renderMap()
