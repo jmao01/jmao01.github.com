@@ -152,6 +152,7 @@
 				waldo.exist = false;
 				carmen.exist = false;
 				parsed.JSON.parse(request.responseText);
+				console.log('Hi');
 				for (var i = 0; i < parsed.length; i++){
 					console.log(parsed);
 					if (parsed[i].name == 'Waldo'){
