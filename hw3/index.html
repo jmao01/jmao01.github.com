@@ -166,14 +166,14 @@
 						waldo.lon = parsed[i]['loc']['longitude'];
 						waldo.note = parsed[i]['loc']['note'];
 						waldo.exist = 'true';
-						waldo.dist = calculateDistance(waldo.lat, myLat, waldo.lon, myLon);
+						waldo.distance = calculateDistance(waldo.lat, myLat, waldo.lon, myLon);
 					}
 					if (parsed[i].name == 'Carmen Sandiego'){
 						carmen.lat = parsed[i]['loc']['latitude'];
 						carmen.lon = parsed[i]['loc']['longitude'];
 						carmen.note = parsed[i]['loc']['note'];
 						carmen.exist = 'true';
-						carmen.dist = calculateDistance(carmen.lat, myLat, carmen.lon, myLon);
+						carmen.distance = calculateDistance(carmen.lat, myLat, carmen.lon, myLon);
 					}
 				}
 				if (waldo.exist == 'true'){
