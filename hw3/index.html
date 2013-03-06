@@ -9,6 +9,33 @@
 <link rel="stylesheet" href="geolocation_map_style.css" />
 
 <script>
+	var request;
+
+	try {
+
+		request = new XMLHttpRequest();
+
+	}
+
+	catch (ms1) {
+		try {
+			request = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (ms2) {
+			try {
+				request = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (ex) {
+				request = null;
+			}
+		}
+	}
+
+	if (request == null) {
+		alert("Error creating request object -- Ajax not supported?");
+	}
+
+
 	function initialize_variables()
 	{
 		myLat = 0;
@@ -123,7 +150,7 @@
 		map.panTo(me);
 		var marker = new google.maps.Marker({
 			position: me,
-			title: You are here
+			title: 'You are here'
 		});
 		marker.setMap(map);
 
