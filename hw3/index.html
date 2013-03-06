@@ -158,16 +158,19 @@
 
 	function drawPolyline()
 	{
-		stationCoords = new Object();
-stationCoords[0] = new google.maps.LatLng(station[0].lat, station[0].lon);
-stationCoords[1] = new google.maps.LatLng(station[1].lat, station[1].lon);		
-		subwayPath = new google.maps.Polyline({
-			path: stationCoords,
-			strokeColor: '#FF0000',
-			strokeOpacity: 1.0,
-			strokeWeight: 2
-		});
-		subwayPath.setMap(map);
+	var flightPlanCoordinates = [
+            new google.maps.LatLng(station[0].lat, station[0].lon),
+            new google.maps.LatLng(station[1].lat, station[1].lon),
+            new google.maps.LatLng(-18.142599, 178.431),
+            new google.maps.LatLng(-27.46758, 153.027892)
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+flightPath.setMap(map);
 	}	
 		
 </script>
