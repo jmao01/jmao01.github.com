@@ -165,23 +165,47 @@
 					if (parsed[i].name == 'Waldo'){
 						waldo.lat = parsed[i]['loc']['latitude'];
 						waldo.lon = parsed[i]['loc']['longitude'];
-						waldo.name = parsed[i]['loc']['note'];
+						waldo.note = parsed[i]['loc']['note'];
 						console.log(waldo);
 						waldo.exist = 'true';
 					}
 					if (parsed[i].name == 'Carmen'){
 						carmen.lat = parsed[i]['loc']['latitude'];
 						carmen.lon = parsed[i]['loc']['longitude'];
-						carmen.name = parsed[i]['loc']['note'];
+						carmen.note = parsed[i]['loc']['note'];
 						carmen.exist = 'true';
 						console.log(carmen);
 					}
 				}
 				if (waldo.exist == 'true'){
-					createMarker(waldo);
+					var loc = new google.maps.LatLng(waldo.lat, waldo.lon);
+					var marker = new google.maps.Marker({
+						position: loc,
+						title: 'Waldo'
+						icon: 'waldo.png'
+					});
+					marker.setMap(map);
+
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.close();
+						infowindow.setContent(waldo.note);
+						infowindow.open(map, this);
+					});
 				}
 				if (carmen.exist == 'true'){
-					createMarker(carmen);
+					var loc = new google.maps.LatLng(carmen.lat, carmen.lon);
+					var marker = new google.maps.Marker({
+						position: loc,
+						title: 'Carmen'
+						icon: 'carmen.png'
+					});
+					marker.setMap(map);
+
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.close();
+						infowindow.setContent(carmen.note);
+						infowindow.open(map, this);
+					});
 				}
 			}
 
@@ -221,20 +245,19 @@
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 		
-		pic = 'mbtaT.png'
 		for (var i = 0; i < numStops; i++){
-			createMarker(station[i], pic);
+			createMarker(station[i]);
 		}
 	}
 
 
-	function createMarker(place, picture)
+	function createMarker(place)
 	{			
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name,
-			icon: picture
+			icon: 'mbtaT.png'
 		});
 		marker.setMap(map);
 
