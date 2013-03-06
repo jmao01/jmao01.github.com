@@ -221,7 +221,6 @@
 	
 	function requestSchedule(place){
 
-		console.log(place);
 		try {
 
 			requestsched = new XMLHttpRequest();
@@ -251,6 +250,8 @@
 			requestsched.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
 
 			requestsched.send(null);
+			
+			console.log(place);
 
 			requestsched.onreadystatechange = callbackSchedule(place);
 
