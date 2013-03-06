@@ -182,7 +182,7 @@
 						icon: 'waldo.png'
 					});
 					marker.setMap(map);
-					waldoDist = calculateDistance(waldo.lat, myLat, waldo.lon, myLon);
+					var waldoDist = calculateDistance(waldo.lat, myLat, waldo.lon, myLon);
 					google.maps.event.addListener(marker, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(waldo.note + '<br>' + 'Distance from you: '
@@ -198,7 +198,7 @@
 						icon: 'carmen.png'
 					});
 					marker1.setMap(map);
-					carmenDist = calculateDistance(carmen.lat, myLat, carmen.lon, myLon);
+					var carmenDist = calculateDistance(carmen.lat, myLat, carmen.lon, myLon);
 					google.maps.event.addListener(marker1, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(carmen.note + '<br>' + 'Distance from you: '
