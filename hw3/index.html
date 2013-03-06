@@ -268,7 +268,7 @@
 
 						
 
-			if (requestsched.readyState == 4 && requestsched.status == 200) {
+			//if (requestsched.readyState == 4 && requestsched.status == 200) {
 				console.log(place);
 				parsedSched = JSON.parse(requestsched.responseText);
 				for (var i = 0; i < parsedSched.length; i++){
@@ -280,7 +280,7 @@
 					}
 				}
 				return list;
-			}
+			//}
 
 		}
 
