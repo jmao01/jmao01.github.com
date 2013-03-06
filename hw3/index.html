@@ -154,10 +154,9 @@
 		});
 		marker.setMap(map);
 
-		google.maps.event.addListener(marker, 'load', function() {
-			infowindow.setContent(marker.title);
-			infowindow.open(map, marker);
-		});
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+		
 		
 		for (var i = 0; i < numStops; i++){
 			createMarker(station[i]);
