@@ -32,6 +32,7 @@
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		drawPolyline();
 		getMyLocation();
+		requestSchedule();
 	}
 
 	function initStations(){
@@ -219,7 +220,7 @@
 	}
 	
 	
-	function requestSchedule(place){
+	function requestSchedule(){
 
 		try {
 
@@ -251,7 +252,7 @@
 
 			requestsched.send(null);
 
-			requestsched.onreadystatechange = callbackSchedule(place);
+			requestsched.onreadystatechange = callbackSchedule();
 
 		}
 
@@ -262,7 +263,7 @@
 
 	}
 
-	function callbackSchedule(place){
+	function callbackSchedule(){
 
 		try {
 
@@ -315,13 +316,12 @@
 		});
 		marker.setMap(map);
 
-		scheduleinfo = requestSchedule(place);
-
+	
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.close();
 			information = place.name + 
 				'<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' +
-				scheduleinfo + '</table>';
+				  '</table>';
 			infowindow.setContent(information);
 			infowindow.open(map, this);
 		});
