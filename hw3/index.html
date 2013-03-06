@@ -136,7 +136,6 @@
 
 	function requestCarmenWaldo()
 	{
-		console.log('test');
 		try {
 			request.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 			request.send(null);
@@ -150,8 +149,7 @@
 	function callbackCarmenWaldo()
 	{
 		try {
-			if (request.readyState == 4){
-						Waldo = 0;
+			console.log(request.readyState);
 		}
 						
 		 }
