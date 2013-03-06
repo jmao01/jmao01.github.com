@@ -220,68 +220,68 @@
 	}
 	
 	
-function requestSchedule(){
+	function requestSchedule(){
 
-try {
+		try {
 
-requestsched = new XMLHttpRequest();
+			requestsched = new XMLHttpRequest();
 
-}
+		}
 
-catch (ms1) {
-try {
-requestsched = new ActiveXObject("Msxml2.XMLHTTP");
-}
-catch (ms2) {
-try {
-requestsched = new ActiveXObject("Microsoft.XMLHTTP");
-}
-catch (ex) {
-requestsched = null;
-}
-}
-}
+		catch (ms1) {
+			try {
+				requestsched = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch (ms2) {
+				try {
+					requestsched = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (ex) {
+					requestsched = null;
+				}
+			}
+		}
 
-if (requestsched == null) {
-alert("Error creating request object -- Ajax not supported?");
-}
+		if (requestsched == null) {
+			alert("Error creating request object -- Ajax not supported?");
+		}
 
-try {
+		try {
 
-requestsched.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+			requestsched.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
 
-requestsched.send(null);
+			requestsched.send(null);
 
-requestsched.onreadystatechange = callbackSchedule;
+			requestsched.onreadystatechange = callbackSchedule;
 
-}
+		}
 
-catch (error) {
+		catch (error) {
 
-alert("Whoops, exception caught!");
+			alert("Whoops, exception caught!");
 
-}
+		}
 
-}
+	}
 
-function callbackSchedule(){
+	function callbackSchedule(){
 
-try {
+		try {
 
-if (requestsched.readyState == 4 && requestsched.status == 200) {
+			if (requestsched.readyState == 4 && requestsched.status == 200) {
 
-	hi = 0;
-}
+				hi = 0;
+			}
 
-}
+		}
 
-catch (error) {
+		catch (error) {
 
-alert("Whoops, exception caught!");
+			alert("Whoops, exception caught!");
 
-}
+		}
 
-}
+	}
 
 				
 	function renderMap()
