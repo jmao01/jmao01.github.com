@@ -269,6 +269,8 @@
 		try {
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
+				
+				list = ' ';
 
 				parsedSched = JSON.parse(requestsched.responseText);
 				
