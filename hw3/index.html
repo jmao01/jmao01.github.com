@@ -36,7 +36,7 @@
 	}
 
 	function initStations(){
-		station[0] = {'name': 'Alewife', 'lat': 42.395428, 'lon': -71.142483, 'north': 'RALEN', 'south': 'RALES', 'info': 'a'};
+		station[0] = {'name': 'Alewife', 'lat': 42.395428, 'lon': -71.142483, 'north': 'RALEN', 'south': 'RALES', 'info': ''};
 		station[1] = {'name': 'Davis', 'lat': 42.39674, 'lon': -71.121815, 'north': 'RDAVN', 'south': 'RDAVS', 'info': ' '};
 		station[2] = {'name': 'Porter', 'lat': 42.3884, 'lon': -71.119149, 'north': 'RPORN', 'south': 'RPORS', 'info': ' '};
 		station[3] = {'name': 'Harvard', 'lat': 42.373362, 'lon': -71.118956, 'north': 'RHARN', 'south': 'RHARS', 'info': ' '};
@@ -332,7 +332,10 @@
 
 
 		google.maps.event.addListener(marker, 'click', function() {
-			information = place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' + '</table>';
+			information = place.name + 
+					'<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' + 
+					place.info +
+					'</table>';
 			infowindow.close();
 			infowindow.setContent(information);
 			infowindow.open(map, this);
