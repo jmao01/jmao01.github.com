@@ -166,14 +166,14 @@
 						waldo.lon = parsed[i]['loc']['longitude'];
 						waldo.note = parsed[i]['loc']['note'];
 						waldo.exist = 'true';
-						//waldo.distance = calculateDistance(waldo.lat, myLat, waldo.lon, myLon);
+						waldo.distance = calculateDistance(waldo.lat, myLat, waldo.lon, myLng);
 					}
 					if (parsed[i].name == 'Carmen Sandiego'){
 						carmen.lat = parsed[i]['loc']['latitude'];
 						carmen.lon = parsed[i]['loc']['longitude'];
 						carmen.note = parsed[i]['loc']['note'];
 						carmen.exist = 'true';
-						//carmen.distance = calculateDistance(carmen.lat, myLat, carmen.lon, myLon);
+						carmen.distance = calculateDistance(carmen.lat, myLat, carmen.lon, myLng);
 					}
 				}
 				if (waldo.exist == 'true'){
@@ -188,7 +188,7 @@
 					google.maps.event.addListener(marker, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(waldo.note + '<br>' + 'Distance from you: '
-							);
+							+ waldo.distance);
 						infowindow.open(map, this);
 					});
 				}
@@ -204,7 +204,7 @@
 					google.maps.event.addListener(marker1, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(carmen.note + '<br>' + 'Distance from you: '
-							);
+							+ carmen.distance);
 						infowindow.open(map, this);
 					});
 				}
