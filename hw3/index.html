@@ -221,6 +221,7 @@
 	
 	function requestSchedule(place){
 
+		console.log(place);
 		try {
 
 			requestsched = new XMLHttpRequest();
@@ -324,7 +325,6 @@
 		});
 		marker.setMap(map);
 
-		console.log(place.name);
 		scheduleinfo = requestSchedule(place);
 
 		google.maps.event.addListener(marker, 'click', function() {
