@@ -40,7 +40,6 @@
 	{
 		myLat = 0;
 		myLng = 0;
-		request = new XMLHttpRequest();
 		me = new google.maps.LatLng(myLat, myLng);
 		myOptions = {
 			zoom: 13, 
@@ -58,7 +57,7 @@
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		drawPolyline();
-		requestSchedule();
+		requestCarmenWaldo();
 		getMyLocation();
 	}
 
@@ -148,6 +147,8 @@
 	function callbackCarmenWaldo()
 	{
 		try {
+			if (request.readyState == 4){
+				hi = 0;
 			
 		}
 						
@@ -158,28 +159,12 @@
 	}
 	function requestSchedule()
 	{
-		try {
-			request.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
-			request.send(null);
-			request.onreadystatechange = callbackSchedule();
-		}
-		catch (error) {
-			alert("Whoops, exception caught!");
-		}
+		
 	}
 
 	function callbackSchedule()
 	{
-		try {
-			if (request.readyState == 4) {
-				hi = 0;
-			}		
-		}
-						
-		 
-		 catch (error){
-			alert("Whoops, exception caught!");
-		 }
+		
 	}
 				
 	function renderMap()
