@@ -270,7 +270,7 @@
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
 
-				hi = 0;
+				parsedSched = JSON.parse(requestsched.responseText);
 			}
 
 		}
