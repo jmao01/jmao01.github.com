@@ -275,10 +275,10 @@
 				for (var i = 0; i < station.length; i++){
 					
 					for (var j = 0; j < parsedSched.length; j++){
-						if (parsedSched[j].PlatformKey == station[i].north){
+						if (parsedSched[j].PlatformKey == station[i].north && parsedSched[j].InformationType == 'Predicted'){
 							station[i].info = station[i].info + '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
 						}
-						if (parsedSched[i].PlatformKey == station[i].south){
+						if (parsedSched[i].PlatformKey == station[i].south && parsedSched[j].InformationType == 'Predicted'){
 							station[i].info = station[i].info + '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'south' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
 						}
 					}
