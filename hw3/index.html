@@ -266,12 +266,10 @@
 
 		try {
 
-						console.log(place);
+						
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
-				bye = 0;
-				list = ' ';
-				hi = 0;
+				console.log(place);
 				parsedSched = JSON.parse(requestsched.responseText);
 				for (var i = 0; i < parsedSched.length; i++){
 					if (parsedSched[i].PlatformKey == place.north){
