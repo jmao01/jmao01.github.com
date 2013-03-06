@@ -331,7 +331,7 @@
 		marker.setMap(map);
 
 		google.maps.event.addListener(marker, 'click', function() {
-			information = place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' + place.info '</table>';
+			information = place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' + place.info + '</table>';
 			infowindow.close();
 			infowindow.setContent(information);
 			infowindow.open(map, this);
