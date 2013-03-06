@@ -139,17 +139,12 @@
 
 
 	function createMarker(place)
-	{
-		var pic = {
-				url: 'theT.png',
-				size: new google.maps.Size(20,32)
-		}
-				
+	{			
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name,
-			icon: pic
+			icon: 'theT.png'
 		});
 		marker.setMap(map);
 
