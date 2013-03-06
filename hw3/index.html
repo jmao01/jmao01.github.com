@@ -157,18 +157,17 @@
 
 	function drawPolyline()
 	{
-		flightPlanCoordinates = new Array();
+		stationCoordinates = new Array();
 		for(var i = 0; i < numStops; i++){
-			flightPlanCoordinates[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
+			stationCoordinates[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
 		}
-		
-        var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
-flightPath.setMap(map);
+        	var redLine = new google.maps.Polyline({
+          		path: stationCoordinates,
+          		strokeColor: '#FF0000',
+          		strokeOpacity: 1.0,
+          		strokeWeight: 2
+       		});
+		redLine.setMap(map);
 	}	
 		
 </script>
