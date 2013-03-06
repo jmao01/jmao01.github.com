@@ -108,66 +108,67 @@
 
 	function requestCarmenWaldo(){
 
-try {
+		try {
 
-request = new XMLHttpRequest();
+			request = new XMLHttpRequest();
 
-}
+		}
 
-catch (ms1) {
-try {
-request = new ActiveXObject("Msxml2.XMLHTTP");
-}
-catch (ms2) {
-try {
-request = new ActiveXObject("Microsoft.XMLHTTP");
-}
-catch (ex) {
-request = null;
-}
-}
-}
+		catch (ms1) {
+			try {
+				request = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch (ms2) {
+				try {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (ex) {
+					request = null;
+				}
+			}
+		}
 
-if (request == null) {
-alert("Error creating request object -- Ajax not supported?");
-}
+		if (request == null) {
+			alert("Error creating request object -- Ajax not supported?");
+		}
 
 
-try {
+		try {
 
-request.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
+			request.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 
-request.send(null);
+			request.send(null);
 
-request.onreadystatechange = callbackCarmenWaldo;
+			request.onreadystatechange = callbackCarmenWaldo;
 
-}
+		}
 
-catch (error) {
+		catch (error) {
 
-alert("Whoops, exception caught!");
+			alert("Whoops, exception caught!");
 
-}
+		}
 
-}
-
-function callbackCarmenWaldo(){
-
-try {
-
-	if (request.readyState == 4){
-		hi = 0;
 	}
 
-}
+	function callbackCarmenWaldo(){
 
-catch (error) {
+		try {
 
-alert("Whoops, exception caught!");
+			if (request.readyState == 4){
+				
+			}
 
-}
+		}
 
-}
+		catch (error) {
+
+			alert("Whoops, exception caught!");
+
+		}
+
+	}
+	
 	function requestSchedule()
 	{
 		
@@ -194,19 +195,20 @@ alert("Whoops, exception caught!");
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 		
+		pic = 'mbtaT.png'
 		for (var i = 0; i < numStops; i++){
-			createMarker(station[i]);
+			createMarker(station[i], pic);
 		}
 	}
 
 
-	function createMarker(place)
+	function createMarker(place, picture)
 	{			
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name,
-			icon: 'mbtaT.png'
+			icon: picture
 		});
 		marker.setMap(map);
 
