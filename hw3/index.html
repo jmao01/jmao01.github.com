@@ -272,9 +272,16 @@
 
 				parsedSched = JSON.parse(requestsched.responseText);
 				
-				bye = 0;
 				for (var i = 0; i < station.length; i++){
-				my = 0;
+					
+					for (var j = 0; j < parsedSched.length; j++){
+						if (parsedSched[j].PlatformKey == station[i].north){
+							station[i].note +='<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
+						}
+						if (parsedSched[i].PlatformKey == station[i].south){
+							station[i].note += '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'south' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
+						}
+					}
 					
 				}
 					
