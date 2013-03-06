@@ -157,8 +157,30 @@
 			alert("Whoops, exception caught!");
 		 }
 	}
-				
+	function requestSchedule()
+	{
+		try {
+			request.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+			request.send(null);
+			request.onreadystatechange = callbackSchedule();
+		}
+		catch (error) {
+			alert("Whoops, exception caught!");
+		}
+	}
 
+	function callbackSchedule()
+	{
+		try {
+			hi = 0;
+		}
+						
+		 
+		 catch (error){
+			alert("Whoops, exception caught!");
+		 }
+	}
+				
 	function renderMap()
 	{
 		var me = new google.maps.LatLng(myLat, myLng);
