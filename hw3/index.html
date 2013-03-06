@@ -94,7 +94,7 @@
 
 	function calculateDistance(lat1, lat2, lon1, lon2)
 	{
-
+		
 		var R = 3958.57440545;
 		var dLat = (lat2-lat1).toRad();
 		var dLon = (lon2-lon1).toRad();
@@ -185,7 +185,7 @@
 						icon: 'waldo.png'
 					});
 					marker.setMap(map);
-
+				
 					google.maps.event.addListener(marker, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(waldo.note + '<br>' + 'Distance from you: '
@@ -201,7 +201,7 @@
 						icon: 'carmen.png'
 					});
 					marker1.setMap(map);
-
+				
 					google.maps.event.addListener(marker1, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(carmen.note + '<br>' + 'Distance from you: '
@@ -218,8 +218,8 @@
 		}
 
 	}
-
-
+	
+	
 	function requestSchedule(){
 
 		try {
@@ -258,6 +258,7 @@
 
 		catch (error) {
 
+			alert("Whoops, exception caught!");
 
 		}
 
@@ -269,21 +270,20 @@
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
 
-				parsedSched = JSON.parse(requestsched.responseText);
-				
-				
+				hi = 0;
 			}
 
 		}
 
 		catch (error) {
 
+			alert("Whoops, exception caught!");
 
 		}
 
 	}
 
-
+				
 	function renderMap()
 	{
 		var me = new google.maps.LatLng(myLat, myLng);
@@ -293,13 +293,13 @@
 			title: 'You are here' + '<br>' + 'Closest Station: ' 
 			      + nearestStop + '<br>' + 'Distance: ' + minDistance
 			      + ' miles'
-
+				
 		});
 		marker.setMap(map);
 
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
-
+		
 		for (var i = 0; i < numStops; i++){
 			createMarker(station[i]);
 		}
@@ -338,7 +338,7 @@
        		});
 		redLine.setMap(map);
 	}	
-
+		
 </script>
 </head>
 
