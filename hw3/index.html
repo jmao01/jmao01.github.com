@@ -247,11 +247,11 @@
 
 		try {
 
-			requestsched.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
+			requestsched.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
 
 			requestsched.send(null);
 
-			requestsched.onreadystatechange = callbackSchedule;
+			requestsched.onreadystatechange = callbackSchedule();
 
 		}
 
