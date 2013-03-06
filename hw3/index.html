@@ -154,6 +154,7 @@
 		});
 		marker.setMap(map);
 
+		var infowindow = new google.maps.InfoWindow();
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 		
