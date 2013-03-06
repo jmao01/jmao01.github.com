@@ -144,8 +144,9 @@
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name,
-			icon: new google.maps.MarkerImage( 'theT.png' , undefined, 
-			undefined, new google.maps.Size(30, 30));
+			icon: new google.maps.MarkerImage( 'theT.png' , new google.maps.Size(24, 24),
+                                new google.maps.Point(0,0),
+                                new google.maps.Point(0, 24))
 		});
 		marker.setMap(map);
 
