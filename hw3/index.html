@@ -140,14 +140,12 @@
 
 	function createMarker(place)
 	{
-		var pic = {
-			url: 'theT.png',
-		}
 		var loc = new google.maps.LatLng(place.lat, place.lon);
 		var marker = new google.maps.Marker({
 			position: loc,
 			title: place.name,
-			icon: pic
+			icon: icon: new google.maps.MarkerImage( 'theT.png' , undefined, 
+			undefined, undefined, new google.maps.Size(30, 30));
 		});
 		marker.setMap(map);
 
