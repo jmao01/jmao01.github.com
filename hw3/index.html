@@ -188,7 +188,7 @@
 					google.maps.event.addListener(marker, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(waldo.note + '<br>' + 'Distance from you: '
-							+ waldo.distance);
+							+ waldo.distance + ' miles');
 						infowindow.open(map, this);
 					});
 				}
@@ -204,7 +204,7 @@
 					google.maps.event.addListener(marker1, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(carmen.note + '<br>' + 'Distance from you: '
-							+ carmen.distance);
+							+ carmen.distance + ' miles');
 						infowindow.open(map, this);
 					});
 				}
