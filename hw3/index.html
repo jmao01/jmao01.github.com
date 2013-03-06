@@ -272,7 +272,13 @@
 
 				parsedSched = JSON.parse(requestsched.responseText);
 				
-				hi = 0;
+				for (var i = 0; i < parsedSched.length; i++){
+				
+					if (parsedSched[i].PlatformKey == station[0].north){
+					
+						hi = 0;
+					}
+					
 			}
 
 		}
