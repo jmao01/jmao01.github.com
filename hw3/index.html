@@ -277,13 +277,7 @@
 				my = 0;
 					for (var j = 0; j < parsedSched.length; j++){
 						hi = 0;
-						station[i]['info'] = '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
-						if (parsedSched[j].PlatformKey == station[i].north){
-							station[i]['info'] = '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
-						}
-						if (parsedSched[j].PlatformKey == station[i].south){
-							station[i]['info'] += '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
-						}
+						
 					}
 				}
 					
