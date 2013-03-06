@@ -277,7 +277,7 @@
 					for (var j = 0; j < parsedSched.length; j++){
 				
 						if (parsedSched[j].PlatformKey == station[i].north){
-							station[i]['info'] +='<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
+							station[i]['info'] = '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
 						}
 						if (parsedSched[j].PlatformKey == station[i].south){
 							station[i]['info'] += '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
