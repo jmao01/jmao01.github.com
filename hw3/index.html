@@ -324,6 +324,7 @@
 		});
 		marker.setMap(map);
 
+		console.log(place.name);
 		scheduleinfo = requestSchedule(place);
 
 		google.maps.event.addListener(marker, 'click', function() {
