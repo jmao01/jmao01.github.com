@@ -151,37 +151,12 @@
 	function callbackCarmenWaldo()
 	{
 		try {
-			console.log(request.readyState);
 			if (request.readyState == 4){
-				console.log('test5');
-				waldo.exist = 'false';
-				carmen.exist = 'false';
-				console.log('test6');
-				parsed.JSON.parse(request.responseText);
-				console.log('Hi');
-				for (var i = 0; i < parsed.length; i++){
-					console.log(parsed);
-					if (parsed[i].name == 'Waldo'){
-						waldo.lat = parsed[i]['loc']['latitude'];
-						waldo.lon = parsed[i]['loc']['longitude'];
-						waldo.name = parsed[i]['loc']['note'];
-						console.log(waldo);
+						waldo.lat = 0;
+						waldo.lon = 0;
+						waldo.name = 0;
 						waldo.exist = 'true';
-					}
-					if (parsed[i].name == 'Carmen'){
-						carmen.lat = parsed[i]['loc']['latitude'];
-						carmen.lon = parsed[i]['loc']['longitude'];
-						carmen.name = parsed[i]['loc']['note'];
-						carmen.exist = 'true';
-						console.log(carmen);
-					}
-				}
-				if (waldo.exist == 'true'){
-					createMarker(waldo);
-				}
-				if (carmen.exist == 'true'){
-					createMarker(carmen);
-				}
+						
 			}
 		 }
 		 catch (error){
