@@ -220,12 +220,61 @@
 	
 	function requestSchedule()
 	{
-		
+		try {
+
+			requestsched = new XMLHttpRequest();
+
+		}
+
+		catch (ms1) {
+			try {
+				requestsched = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch (ms2) {
+				try {
+					requestsched = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (ex) {
+					requestsched = null;
+				}
+			}
+		}
+
+		if (request == null) {
+			alert("Error creating request object -- Ajax not supported?");
+		}
+
+
+		try {
+
+			requestsched.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
+
+			requestsched.send(null);
+
+			requestsched.onreadystatechange = callbackSchedule;
+
+		}
+
+		catch (error) {
+
+
+		}
+
 	}
 
 	function callbackSchedule()
 	{
-		
+		try {
+
+			if (request.readyState == 4 && request.status == 200){
+				hi = 0;
+			}
+
+		}
+
+		catch (error) {
+
+		}
 	}
 				
 	function renderMap()
