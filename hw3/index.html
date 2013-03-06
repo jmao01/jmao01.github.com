@@ -268,19 +268,10 @@
 
 						
 
-			//if (requestsched.readyState == 4 && requestsched.status == 200) {
-				console.log(place);
-				parsedSched = JSON.parse(requestsched.responseText);
-				for (var i = 0; i < parsedSched.length; i++){
-					if (parsedSched[i].PlatformKey == place.north){
-						list +='<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
-					}
-					if (parsedSched[i].PlatformKey == place.south){
-						list += '<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
-					}
-				}
-				return list;
-			//}
+			if (requestsched.readyState == 4 && requestsched.status == 200) {
+				hi = 0;
+				return 'bye';
+			}
 
 		}
 
