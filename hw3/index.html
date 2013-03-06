@@ -156,33 +156,7 @@
 		try {
 
 			if (request.readyState == 4){
-				waldo.exist = 'false';
-				carmen.exist = 'false';
-				parsed.JSON.parse(request.responseText);
-				for (var i = 0; i < parsed.length; i++){
-					if (parsed[i].name == 'Waldo'){
-						waldo.lat = parsed[i]['loc']['latitude'];
-						waldo.lon = parsed[i]['loc']['longitude'];
-						waldo.name = parsed[i]['loc']['note'];
-						console.log(waldo);
-						waldo.exist = 'true';
-					}
-					if (parsed[i].name == 'Carmen'){
-						carmen.lat = parsed[i]['loc']['latitude'];
-						carmen.lon = parsed[i]['loc']['longitude'];
-						carmen.name = parsed[i]['loc']['note'];
-						carmen.exist = 'true';
-						console.log(carmen);
-					}
-				}
-				if (waldo.exist == 'true'){
-					waldopic = 'waldo.png'
-					createMarker(waldo, waldopic);
-				}
-				if (carmen.exist == 'true'){
-					carmenpic = 'carmen.png'
-					createMarker(carmen, carmenpic);
-				}
+				hi =0;
 			}
 
 		}
