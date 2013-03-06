@@ -267,7 +267,7 @@
 		try {
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
-				var list;
+				list = ' ';
 				parsedSched = JSON.parse(requestsched.responseText);
 				for (var i = 0; i < parsedSched.length; i++){
 					if (parsedSched[i].PlatformKey == place.north){
