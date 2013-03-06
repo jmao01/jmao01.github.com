@@ -240,7 +240,7 @@
 			}
 		}
 
-		if (request == null) {
+		if (requestsched == null) {
 			alert("Error creating request object -- Ajax not supported?");
 		}
 
@@ -266,7 +266,7 @@
 	{
 		try {
 
-			if (request.readyState == 4 && request.status == 200){
+			if (requestsched.readyState == 4 && requestsched.status == 200){
 				hi = 0;
 			}
 
