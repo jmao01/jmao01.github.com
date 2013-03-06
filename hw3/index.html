@@ -267,17 +267,17 @@
 		try {
 
 			if (requestsched.readyState == 4 && requestsched.status == 200) {
-				var scheduleInfo;
+				var list;
 				parsedSched = JSON.parse(requestsched.responseText);
 				for (var i = 0; i < parsedSched.length; i++){
 					if (parsedSched[i].PlatformKey == place.north){
-						scheduleInfo +='<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
+						list +='<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
 					}
 					if (parsedSched[i].PlatformKey == place.south){
-						scheduleInfo += '<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
+						list += '<tr><td>' + parsedSched[i].Line + '</td><td>' + parsedSched[i].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[i].TimeRemaining + '</td></tr>';
 					}
 				}
-				return scheduleInfo;
+				return list;
 			}
 
 		}
