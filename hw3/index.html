@@ -148,7 +148,7 @@
 	function callbackCarmenWaldo()
 	{
 		try {
-			if request.readyState == 4){
+			if (request.readyState == 4){
 				waldo.exist = false;
 				carmen.exist = false;
 				parsed.JSON.parse(request.responseText);
