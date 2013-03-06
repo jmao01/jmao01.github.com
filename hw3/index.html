@@ -166,7 +166,6 @@
 						waldo.lat = parsed[i]['loc']['latitude'];
 						waldo.lon = parsed[i]['loc']['longitude'];
 						waldo.note = parsed[i]['loc']['note'];
-						console.log(waldo.note);
 						waldo.exist = 'true';
 					}
 					if (parsed[i].name == 'Carmen Sandiego'){
@@ -174,7 +173,6 @@
 						carmen.lon = parsed[i]['loc']['longitude'];
 						carmen.note = parsed[i]['loc']['note'];
 						carmen.exist = 'true';
-						console.log(carmen);
 					}
 				}
 				if (waldo.exist == 'true'){
@@ -194,14 +192,14 @@
 				}
 				if (carmen.exist == 'true'){
 					var loc = new google.maps.LatLng(carmen.lat, carmen.lon);
-					var marker = new google.maps.Marker({
+					var marker1 = new google.maps.Marker({
 						position: loc,
 						title: 'Carmen',
 						icon: 'carmen.png'
 					});
-					marker.setMap(map);
+					marker1.setMap(map);
 
-					google.maps.event.addListener(marker, 'click', function() {
+					google.maps.event.addListener(marker1, 'click', function() {
 						infowindow.close();
 						infowindow.setContent(carmen.note);
 						infowindow.open(map, this);
