@@ -275,6 +275,7 @@
 				for (var i = 0; i < station.length; i++){
 				
 					for (var j = 0; j < parsedSched.length; j++){
+						console.log('hi');
 						station[i]['info'] = '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
 						if (parsedSched[j].PlatformKey == station[i].north){
 							station[i]['info'] = '<tr><td>' + parsedSched[j].Line + '</td><td>' + parsedSched[j].Trip + '</td><td>' + 'north' + '</td><td>' + parsedSched[j].TimeRemaining + '</td></tr>';
