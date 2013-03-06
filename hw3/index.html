@@ -330,10 +330,11 @@
 		});
 		marker.setMap(map);
 
+		information = place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr>' + '</table>';
+		console.log(place.info);
+
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.close();
-			information = place.name + '<table id="schedule"><tr><th>Line</th><th>Trip #</th><th>Direction</th><th>Time Remaining</th></tr></table>';
-			console.log(place.info);
 			infowindow.setContent(information);
 			infowindow.open(map, this);
 		});
