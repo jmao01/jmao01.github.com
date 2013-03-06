@@ -58,7 +58,6 @@
 		initStations();
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		drawPolyline();
-		console.log('test3');
 		requestSchedule();
 		getMyLocation();
 	}
@@ -172,7 +171,9 @@
 	function callbackSchedule()
 	{
 		try {
-			hi = 0;
+			if (request.readyState == 4) {
+				hi = 0;
+			}		
 		}
 						
 		 
