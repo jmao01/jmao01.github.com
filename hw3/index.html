@@ -123,11 +123,11 @@
 		map.panTo(me);
 		var marker = new google.maps.Marker({
 			position: me,
-			title: "Here I Am!"
+			title: You are here
 		});
 		marker.setMap(map);
 
-		google.maps.event.addListener(marker, 'click', function() {
+		google.maps.event.addListener(marker, 'load', function() {
 			infowindow.setContent(marker.title);
 			infowindow.open(map, marker);
 		});
