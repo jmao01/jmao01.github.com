@@ -145,7 +145,6 @@
 
 		catch (error) {
 
-			alert("Whoops, exception caught!");
 
 		}
 
@@ -155,7 +154,7 @@
 
 		try {
 
-			if (request.readyState == 4){
+			if (request.readyState == 4 && request.status == 200){
 				waldo = new Object();
 				carmen = new Object();
 				waldo.exist = 'false';
@@ -210,8 +209,6 @@
 		}
 
 		catch (error) {
-
-			alert("Whoops, exception caught!");
 
 		}
 
