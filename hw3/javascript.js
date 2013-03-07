@@ -355,7 +355,7 @@
           		strokeOpacity: 1.0,
           		strokeWeight: 5
        		});
-		redAshmontJFK.setMap(map);
+		redJFKAshmont.setMap(map);
 		JFKBraintree = new Array();
 		var count2 = 0;
 		for(var k = 17; k < numStops; k++){
