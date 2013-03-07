@@ -377,6 +377,6 @@
           		strokeColor: '#FF0000',
           		strokeOpacity: 1.0,
           		strokeWeight: 5
-		}
+		});
 		redJFKNQuincy.setMap(map);
 	}	
