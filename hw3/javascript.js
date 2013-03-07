@@ -373,7 +373,7 @@
 		JFKNQuincy[0] = new google.maps.LatLng(station[12].lat, station[12].lon);
 		JFKNQuincy[1] = new google.maps.LatLng(station[17].lat, station[17].lon);
 		var redJFKNQuincy = new google.maps.Polyline({
-			path: JFKBraintree,
+			path: JFKNQuincy,
           		strokeColor: '#FF0000',
           		strokeOpacity: 1.0,
           		strokeWeight: 5
