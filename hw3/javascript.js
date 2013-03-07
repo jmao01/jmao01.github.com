@@ -332,15 +332,37 @@
 
 	function drawPolyline()
 	{
-		stationCoordinates = new Array();
-		for(var i = 0; i < numStops; i++){
-			stationCoordinates[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
+		ashmontJFK = new Array();
+		for(var i = 0; i < 13; i++){
+			ashmontJFK[i] = new google.maps.LatLng(station[i].lat, station[i].lon);
 		}
-        	var redLine = new google.maps.Polyline({
-          		path: stationCoordinates,
+        	var redAshmontJFK = new google.maps.Polyline({
+          		path: ashmontJFK,
           		strokeColor: '#FF0000',
           		strokeOpacity: 1.0,
           		strokeWeight: 5
        		});
-		redLine.setMap(map);
+		redAshmontJFK.setMap(map);
+		JFKAshmont = new Array();
+		for(var j = 13; j < 17; j++){
+			JFKAshmont[j] = new google.maps.LatLng(station[j].lat, station[j].lon);
+		}
+		var redJFKAshmont = new google.maps.Polyline({
+			path: JFKAshmont,
+          		strokeColor: '#FF0000',
+          		strokeOpacity: 1.0,
+          		strokeWeight: 5
+       		});
+		redAshmontJFK.setMap(map);
+		JFKBraintree = new Array();
+		for(var k = 13; k < numStops; k++){
+			JFKBraintree[k] = new google.maps.LatLng(station[k].lat, station[k].lon);
+		}
+		var redJFKBraintree = new google.maps.Polyline({
+			path: JFKBraintree,
+          		strokeColor: '#FF0000',
+          		strokeOpacity: 1.0,
+          		strokeWeight: 5
+       		});
+		redJFKBraintree.setMap(map);
 	}	
