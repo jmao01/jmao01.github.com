@@ -345,7 +345,7 @@
 		redAshmontJFK.setMap(map);
 		JFKAshmont = new Array();
 		var count1 = 0;
-		for(var j = 13; j < 17; j++){
+		for(var j = 12; j < 17; j++){
 			JFKAshmont[count1] = new google.maps.LatLng(station[j].lat, station[j].lon);
 			count1++;
 		}
