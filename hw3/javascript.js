@@ -346,7 +346,7 @@
 		JFKAshmont = new Array();
 		var count1 = 0;
 		for(var j = 13; j < 17; j++){
-			JFKAshmont[count] = new google.maps.LatLng(station[j].lat, station[j].lon);
+			JFKAshmont[count1] = new google.maps.LatLng(station[j].lat, station[j].lon);
 			count1++;
 		}
 		var redJFKAshmont = new google.maps.Polyline({
@@ -359,7 +359,7 @@
 		JFKBraintree = new Array();
 		var count2 = 0;
 		for(var k = 17; k < numStops; k++){
-			JFKBraintree[k] = new google.maps.LatLng(station[k].lat, station[k].lon);
+			JFKBraintree[count2] = new google.maps.LatLng(station[k].lat, station[k].lon);
 			count2++;
 		}
 		var redJFKBraintree = new google.maps.Polyline({
