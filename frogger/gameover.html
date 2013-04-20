@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script src="jquery.js"></script>
+
+<script>
+
+function send_request(){
+$("#searchForm").unbind('submit').submit(function(event){
+	event.preventDefault();
+	var $form = $(this),
+		term = $form.find('input[name="username"]').val();
+	var posting = $.post('http://salty-lowlands-3357.herokuapp.com/submit.json', 
+		{"game_title": "frogger", "username": term, "score": 500},
+		function(data){
+			console.log(data);
+		},
+		"json"
+	)
+	posting.done(function(data){console.log(data);});
+	}
+)	
+}
+</script>
+
+</head>
+
+<body>
+
+<form action="index.html" id = "searchForm" method="post">
+<table>
+<tr>
+
+</tr>
+<tr>
+<td>Enter Username:</td>
+<td><input type="text" name="username" id="input"></td>
+<td><input type="submit" value="Enter" onclick="send_request()"/></td>
+</tr>
+</table>
+</form>
+<div id="list">
+</div>
+
+</body>
+
+</html>
